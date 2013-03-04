@@ -11,7 +11,6 @@
  * @license    New BSD License
  * @link       http://extras.nettephp.com
  * @package    Nette Extras
- * @version    $Id: VisualPaginator.php 4 2009-07-14 15:22:02Z david@grudl.com $
  */
 use Nette\Application\UI\Control;
 use Nette\Utils\Paginator;
