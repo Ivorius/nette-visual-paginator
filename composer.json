@@ -1,9 +1,8 @@
 {
-	"name": "juzna/nette-visual-paginator",
-	"type": "nette-addon",
+	"name": "pvy/nette-visual-paginator",
 	"description": "Simple paginator",
 	"keywords": ["paginator", "nette"],
-	"homepage": "http://addons.nette.org/cs/visualpaginator",
+	"homepage": "https://github.com/pvy/nette-visual-paginator",
 	"license": "BSD-3",
 	"authors": [
 		{
@@ -13,21 +12,16 @@
 		{
 			"name": "Jan Dolecek",
 			"email": "juzna.cz@gmail.com"
+		},
+		{
+			"name": "pvy",
+			"email": "pvy@centrum.cz"
 		}
 	],
 	"autoload": {
 		"classmap": [ "VisualPaginator.php" ]
 	},
 	"require": {
-		"nette/nette": "2.0.*",
-		"nette/addon-installer": "@dev"
-	},
-	"extra": {
-		"nette": {
-			"assets": { },
-			"assets-optional": {
-				"css": [ "example.css" ]
-			}
-		}
+		"nette/nette": "2.0.*"
 	}
 }
