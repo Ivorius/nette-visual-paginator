@@ -22,6 +22,7 @@ use Nette\Utils\Paginator;
  * @author     David Grudl
  * @copyright  Copyright (c) 2009 David Grudl
  * @package    Nette Extras
+ * @property array onShowPage Pokud je nastaven nejaky handler, pouzije se ajax. Jinak natvrdo link na 'this'.
  */
 class VisualPaginator extends Control {
 
@@ -31,6 +32,9 @@ class VisualPaginator extends Control {
     /** @persistent */
     public $page = 1;
 
+    /** @var array */
+    public $onShowPage;
+
     /**
      * @return Nette\Paginator
      */
@@ -39,6 +43,11 @@ class VisualPaginator extends Control {
             $this->paginator = new Paginator;
         }
         return $this->paginator;
+    }
+
+    public function handleShowPage($page) {
+	// vyvolat události
+	$this->onShowPage($this, $page);
     }
 
     /**
@@ -64,6 +73,7 @@ class VisualPaginator extends Control {
         $this->template->steps = $steps;
         $this->template->paginator = $paginator;
         $this->template->setFile(dirname(__FILE__) . '/template.latte');
+	$this->template->ajax = !empty($this->onShowPage);
         $this->template->render();
     }
 

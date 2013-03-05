@@ -1,6 +1,6 @@
 {
 	"name": "pvy/nette-visual-paginator",
-	"description": "Simple paginator",
+	"description": "Simple paginator with ajax support",
 	"keywords": ["paginator", "nette"],
 	"homepage": "https://github.com/pvy/nette-visual-paginator",
 	"license": "BSD-3",
