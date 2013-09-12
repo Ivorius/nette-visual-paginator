@@ -1,4 +1,5 @@
 <?php
+namespace Unio;
 
 /**
  * Nette Framework Extras
