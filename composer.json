@@ -1,6 +1,6 @@
 {
-	"name": "pvy/nette-visual-paginator",
-	"description": "Simple paginator with ajax support",
+	"name": "unio/visual-paginator",
+	"description": "Simple paginator with ajax and twitter bootstrap support",
 	"keywords": ["paginator", "nette"],
 	"homepage": "https://github.com/pvy/nette-visual-paginator",
 	"license": "BSD-3",
@@ -22,6 +22,6 @@
 		"classmap": [ "VisualPaginator.php" ]
 	},
 	"require": {
-		"nette/nette": "2.0.*"
+		"nette/nette": ">=2.1-dev"
 	}
 }
