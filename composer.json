@@ -2,8 +2,7 @@
 	"name": "unio/visual-paginator",
 	"description": "Simple paginator with ajax and twitter bootstrap support",
 	"keywords": ["paginator", "nette"],
-	"homepage": "https://github.com/pvy/nette-visual-paginator",
-	"license": "BSD-3",
+	"license": "MIT",
 	"authors": [
 		{
 			"name": "David Grudl",
@@ -22,6 +21,6 @@
 		"classmap": [ "VisualPaginator.php" ]
 	},
 	"require": {
-		"nette/nette": ">=2.1-dev"
+		"nette/application": "^2.4||3.0"
 	}
 }

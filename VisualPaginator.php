@@ -1,18 +1,8 @@
 <?php
+declare(strict_types=1);
+
 namespace Unio;
 
-/**
- * Nette Framework Extras
- *
- * This source file is subject to the New BSD License.
- *
- * For more information please see http://extras.nettephp.com
- *
- * @copyright  Copyright (c) 2009 David Grudl
- * @license    New BSD License
- * @link       http://extras.nettephp.com
- * @package    Nette Extras
- */
 use Nette\Application\UI\Control;
 use Nette\Utils\Paginator;
 
@@ -24,37 +14,27 @@ use Nette\Utils\Paginator;
  * @package    Nette Extras
  * @property array onShowPage Pokud je nastaven nejaky handler, pouzije se ajax. Jinak natvrdo link na 'this'.
  */
-class VisualPaginator extends Control {
-
-	/** @var Paginator */
-	private $paginator;
+class VisualPaginator extends Control
+{
 
 	/** @persistent */
 	public $page = 1;
-
 	/** @var array */
 	public $onShowPage;
+	/** @var Paginator */
+	private $paginator;
 
-	/**
-	 * @return Nette\Paginator
-	 */
-	public function getPaginator() {
-		if (!$this->paginator) {
-			$this->paginator = new Paginator;
-		}
-		return $this->paginator;
-	}
-
-	public function handleShowPage($page) {
+	public function handleShowPage($page): void
+	{
 		// vyvolat události
 		$this->onShowPage($this, $page);
 	}
 
 	/**
 	 * Renders paginator.
-	 * @return void
 	 */
-	public function render() {
+	public function render(): void
+	{
 		$paginator = $this->getPaginator();
 		$page = $paginator->page;
 		if ($paginator->pageCount < 2) {
@@ -77,12 +57,19 @@ class VisualPaginator extends Control {
 		$this->template->render();
 	}
 
+	public function getPaginator(): Paginator
+	{
+		if (!$this->paginator) {
+			$this->paginator = new Paginator;
+		}
+		return $this->paginator;
+	}
+
 	/**
 	 * Loads state informations.
-	 * @param  array
-	 * @return void
 	 */
-	public function loadState(array $params) {
+	public function loadState(array $params): void
+	{
 		parent::loadState($params);
 		$this->getPaginator()->page = $this->page;
 	}
