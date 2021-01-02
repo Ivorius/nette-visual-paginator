@@ -21,6 +21,6 @@
 		"classmap": [ "VisualPaginator.php" ]
 	},
 	"require": {
-		"nette/application": "^2.4||3.0"
+		"nette/application": "^2.4 || ^3.0"
 	}
 }
